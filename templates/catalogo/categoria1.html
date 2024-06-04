@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Sitio Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7f6c68362a.js" crossorigin="anonymous"></script>
+
+    <style>
+        .repuesto-img {
+            max-height: 200px; 
+            width: 100%; 
+            object-fit: cover;
+        }
+
+        .contact-navbar {
+            background-color: #333; 
+            color: #fff; 
+            padding: 10px 0; 
+            position: fixed; 
+            bottom: 0; 
+            width: 100%; 
+            z-index: 1000;
+        }
+
+        .contact-info {
+            background-color: #FF5722; 
+            color: #ffffff; 
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-icons {
+            font-size: 24px;
+            margin: 0 5px;
+            color: #ffffff;
+        }
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+        }
+        .carousel-img {
+            max-height: 200px; 
+            width: 100%; 
+            max-width: 600px; 
+            margin: auto; 
+        }
+        .border-green {
+            border: 2px solid green;
+            padding: 15px;
+        }
+        .contact-info-text {
+            color: #fff;
+        }
+        .categoria-titulo {
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2WkYkcPBqRrAVLdQzGbvK_Zide1XWwe5ZOA&s" alt="Logo D&T NRUTA" width="30" height="30" class="d-inline-block align-top" style="margin-right: 10px;">
+                D&T NRUTA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'categoria6' %}" class="nav-link">
+                            <i class="fa-regular fa-user"></i> 
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'index' %}">Categorías</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Motor y Transmisión</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Categories -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-3 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="categoria-titulo">CILINDRO COMPLETO FZ16</div>
+                        <img src="https://tecnimotors.com/cdn/shop/products/CHN0031351_0_500x_crop_center.jpg?v=1625245423" class="repuesto-img" alt="Aceites">
+                        <p class="card-text">Envíos a nivel nacional</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="categoria-titulo">CILINDRO COMPLETO CB110</div>
+                        <img src="https://tecnimotors.com/cdn/shop/products/CHN0031348_0_500x_crop_center.jpg?v=1625245283" class="repuesto-img" alt="Sistemas de transmisión">
+                        <p class="card-text">Envíos a nivel nacional</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="categoria-titulo">CILINDRO COMPLETO NXR150</div>
+                        <img src="https://tecnimotors.com/cdn/shop/products/CHN0031347_0_500x_crop_center.jpg?v=1625245196" class="repuesto-img" alt="Sistemas de tracción">
+                        <p class="card-text">Envíos a nivel nacional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-3 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="categoria-titulo">CILINDRO COMPLETO NXR125</div>
+                        <img src="https://tecnimotors.com/cdn/shop/products/CHN0031346_0_500x_crop_center.jpg?v=1625245150" class="repuesto-img" alt="Aceites">
+                        <p class="card-text">Envíos a nivel nacional</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="categoria-titulo">CILINDRO COMPLETO CBF150</div>
+                        <img src="https://tecnimotors.com/cdn/shop/products/CHN0031345_0_500x_crop_center.jpg?v=1625245111" class="repuesto-img" alt="Sistemas de transmisión">
+                        <p class="card-text">Envíos a nivel nacional</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="categoria-titulo">CILINDRO COMPLETO PULSAR 135.54.0 MM</div>
+                        <img src="https://tecnimotors.com/cdn/shop/products/CHN0031343_0_500x_crop_center.jpg?v=1625245048" class="repuesto-img" alt="Sistemas de tracción">
+                        <p class="card-text">Envíos a nivel nacional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 1500px;"></div>
+
+    <nav class="navbar contact-navbar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span class="navbar-text contact-info-text">Contacto: Teléfono: 988458986 | Email: D&TNRUTA123@gmail.com</span>
+            <div>
+                <a href="https://www.tiktok.com/@dytnruta" class="social-icon"><i class="fab fa-tiktok fa-lg"></i></a> 
+                <a href="https://www.facebook.com/profile.php?id=100087597285206&sk=about" class="social-icon"><i class="fab fa-facebook fa-lg"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qvphk4KpGHbqW8BiTQK1vxUp8kjvYjFAT0MXJX7HlEk7k3dC1L93pXlbMn0y5tw4" crossorigin="anonymous"></script>
+</body>
+</html>

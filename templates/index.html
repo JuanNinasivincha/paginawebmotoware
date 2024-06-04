@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&T NRUTA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7f6c68362a.js" crossorigin="anonymous"></script>
+
+    <style>
+        .contact-info {
+            background-color: #FF5722; 
+            color: #ffffff; 
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-icons {
+            font-size: 24px;
+            margin: 0 5px;
+            color: #ffffff;
+        }
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+        }
+        .carousel-img {
+            max-height: 200px; 
+            width: 100%; 
+            max-width: 600px; 
+            margin: auto; 
+        }
+        .contact-navbar {
+            background-color: #333; 
+            color: #fff; 
+            padding: 10px 0; 
+            position: fixed; 
+            bottom: 0; 
+            width: 100%; 
+        }
+        .border-green {
+            border: 2px solid green;
+            padding: 15px;
+        }
+        .contact-info-text {
+            color: #fff;
+        }
+
+       
+    
+    </style>
+</head>
+<body>
+
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2WkYkcPBqRrAVLdQzGbvK_Zide1XWwe5ZOA&s" alt="Logo D&T NRUTA" width="30" height="30" class="d-inline-block align-top" style="margin-right: 10px;"> 
+                D&T NRUTA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'categoria6' %}" class="nav-link">
+                            <i class="fa-regular fa-user"></i> 
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <div class="col">
+                <h1>Contamos con los repuestos más recientes del mercado!!!</h1>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ5VjVODSg3OI9FGpIu47anuxaXQNK5JvfhA&s" class="d-block w-100 carousel-img" alt="...">
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="https://www.tercerainformacion.es/wp-content/uploads/2019/07/sin_titulo_774-950x0-c-default.png" class="d-block w-100 carousel-img" alt="...">
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrhbaw4LwFm0rsHshtuOYdz35_USWLVEwGrw&s" class="d-block w-100 carousel-img" alt="...">
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="border-green text-center">
+                    <h3>REPUESTOS</h3>
+                    <p>Contamos con baterías, aceites, filtros de aire y muchos más repuestos.</p>
+                    <a href="{% url 'index' %}" class="btn btn-primary">Mirar catálogo de repuestos</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="border-green text-center"> 
+                    <h3>SERVICIOS</h3>
+                    <p>Realizamos cambio de aceite, inspección de batería, balanceo de ruedas, etc.</p>
+                    <a href="url_de_tu_pagina_de_agendamiento" class="btn btn-primary">Agendar tu cita</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+<nav class="navbar contact-navbar">
+    <div class="container d-flex justify-content-between align-items-center">
+        <span class="navbar-text contact-info-text">Contacto: Teléfono: 988458986 | Email: D&TNRUTA123@gmail.com</span>
+        <div>
+            <a href="https://www.tiktok.com/@dytnruta" class="social-icon"><i class="fab fa-tiktok fa-lg"></i></a> 
+            <a href="https://www.facebook.com/profile.php?id=100087597285206&sk=about" class="social-icon"><i class="fab fa-facebook fa-lg"></i></a>
+        </div>
+    </div>
+</nav>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfl" crossorigin="anonymous"></script>
+</body>
+</html>

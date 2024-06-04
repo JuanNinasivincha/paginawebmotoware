@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Sitio Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7f6c68362a.js" crossorigin="anonymous"></script>
+
+    <style>
+        .repuesto-img {
+            max-height: 200px; 
+            width: 100%; 
+            object-fit: cover;
+        }
+
+        .contact-navbar {
+            background-color: #333; 
+            color: #fff; 
+            padding: 10px 0; 
+            position: fixed; 
+            bottom: 0; 
+            width: 100%; 
+            z-index: 1000;
+        }
+
+        .contact-info {
+            background-color: #FF5722; 
+            color: #ffffff; 
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-icons {
+            font-size: 24px;
+            margin: 0 5px;
+            color: #ffffff;
+        }
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+        }
+        .carousel-img {
+            max-height: 200px; 
+            width: 100%; 
+            max-width: 600px; 
+            margin: auto; 
+        }
+        .border-green {
+            border: 2px solid green;
+            padding: 15px;
+        }
+        .contact-info-text {
+            color: #fff;
+        }
+        .categoria-titulo {
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2WkYkcPBqRrAVLdQzGbvK_Zide1XWwe5ZOA&s" alt="Logo D&T NRUTA" width="30" height="30" class="d-inline-block align-top" style="margin-right: 10px;"> <!-- Agrega la imagen aquí -->
+                D&T NRUTA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'categoria6' %}" class="nav-link">
+                            <i class="fa-regular fa-user"></i> 
+                        </a>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-3 mb-3">
+                <div class="categoria-titulo">Motor y Transmisión</div>
+                <a href="{% url 'categoria1' %}">
+                    <img src="https://img.freepik.com/vector-premium/moto-motor-vector-arte-monocromo-iconos-simbolos-graficos_289688-447.jpg" class="repuesto-img rounded-circle" alt="Aceites">
+                </a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="categoria-titulo">Frenos</div>
+                <a href="{% url 'categoria2' %}">
+                    <img src="https://previews.123rf.com/images/ylivdesign/ylivdesign1611/ylivdesign161101286/67253035-moto-icono-de-frenos-del-manillar-ilustraci%C3%B3n-isom%C3%A9trica-de-moto-icono-de-frenos-del-manillar-del.jpg" class="repuesto-img rounded-circle" alt="Sistemas de transmisión">
+                </a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="categoria-titulo">Suspensión</div>
+                <a href="{% url 'categoria3' %}">
+                    <img src="https://www.shutterstock.com/image-vector/isolated-monochrome-shock-absorber-car-600nw-2378021671.jpg" class="repuesto-img rounded-circle" alt="Sistemas de tracción">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-3 mb-3">
+                <div class="categoria-titulo">Aceites</div>
+                <a href="{% url 'categoria4' %}">
+                    <img src="https://previews.123rf.com/images/keltmd/keltmd1710/keltmd171000322/88233058-icono-de-aceite-de-aceite-ilustraci%C3%B3n-de-dibujos-animados-de-aceite-de-aceite-icono-de-vector-para.jpg" class="repuesto-img rounded-circle" alt="Aceites">
+                </a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="categoria-titulo">Neumáticos</div>
+                <a href="{% url 'categoria5' %}">
+                    <img src="https://img.freepik.com/vector-premium/ilustracion-rueda-motocicleta-blanco-negro_602961-61.jpg" class="repuesto-img rounded-circle" alt="Sistemas de transmisión">
+                </a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="categoria-titulo">Iluminación</div>
+                <a href="{% url 'categoria6' %}">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRB9SOKXUJoWTYSBmIyV_LcDMIU9BFs01WVQ&s" class="repuesto-img rounded-circle" alt="Sistemas de tracción">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 1500px;"></div>
+
+    <nav class="navbar contact-navbar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span class="navbar-text contact-info-text">Contacto: Teléfono: 988458986 | Email: D&TNRUTA123@gmail.com</span>
+            <div>
+                <a href="https://www.tiktok.com/@dytnruta" class="social-icon"><i class="fab fa-tiktok fa-lg"></i></a> 
+                <a href="https://www.facebook.com/profile.php?id=100087597285206&sk=about" class="social-icon"><i class="fab fa-facebook fa-lg"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qvphk4KpGHbqW8BiTQK1vxUp8kjvYjFAT0MXJX7HlEk7k3dC1L93pXlbMn0y5tw4" crossorigin="anonymous"></script>
+</body>
+</html>
