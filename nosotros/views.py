@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+def login_view(request):
+    return render(request, 'nosotros/login.html')
 
-def index(request):
-    return render(request, 'nosotros/index.html')
+
+def crear_cuenta(request):
+    return render(request, 'nosotros/create.html')
