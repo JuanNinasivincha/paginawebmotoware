@@ -10,5 +10,6 @@ urlpatterns = [
     path('catalogo/', include('catalogo.urls')),
     path('servicios/', include('servicios.urls')),
     path('catalogo/', include('contacto.urls')),
+    path('quejas/', include('quejas.urls')),
 
 ]

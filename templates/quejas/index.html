@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&T NRUTA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7f6c68362a.js" crossorigin="anonymous"></script>
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2WkYkcPBqRrAVLdQzGbvK_Zide1XWwe5ZOA&s" alt="Logo D&T NRUTA" width="30" height="30" class="d-inline-block align-top"> 
+                D&T NRUTA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'servicios' %}">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'login' %}" class="nav-link">
+                            <i class="fa-regular fa-user"></i> 
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link cart-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cart-popup" id="cartPopup">
+        <div class="cart-content">
+            <h3>Carrito de Compras</h3>
+            <p>No tienes productos agregados al carrito.</p>
+        </div>
+    </div>
+
+    <nav class="navbar contact-navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <span class="navbar-text contact-info-text">Teléfono: 951303091 | Email: D&TNRUTA123@gmail.com</span>
+            <div>
+                <a href="https://www.tiktok.com/@dytnruta" class="social-icon"><i class="fab fa-tiktok fa-lg"></i></a> 
+                <a href="https://www.facebook.com/profile.php?id=100087597285206&sk=about" class="social-icon"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="social-icon" data-bs-toggle="modal" data-bs-target="#complaintModal"><i class="fa-solid fa-book" style="color: #63E6BE;"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">LIBRO DE RECLAMACIONES</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="registroForm">
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="nombre" class="form-label">Nombres</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                </div>
+                                <div class="col">
+                                    <label for="apellido" class="form-label">Apellidos</label>
+                                    <input type="text" class="form-control" id="apellido" name="apellido" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="tipo_documento" class="form-label">Tipo de Documento</label>
+                                    <select class="form-select" id="tipo_documento" name="tipo_documento" required>
+                                        <option value="">Seleccionar...</option>
+                                        <option value="dni">DNI</option>
+                                        <option value="pasaporte">Pasaporte</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="documento" class="form-label">Número de documento</label>
+                                    <input type="tel" class="form-control" id="documento" name="documento" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="email" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="col">
+                                    <label for="telefono" class="form-label">Teléfono</label>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="direccion" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" id="direccion" name="direccion" required>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="tipo" id="producto" value="producto" required>
+                                        <label class="form-check-label" for="producto">Producto</label>
+                                    </div>
+                                    <div class="form-check form-check-inline ms-3">
+                                        <input class="form-check-input" type="radio" name="tipo" id="servicio" value="servicio" required>
+                                        <label class="form-check-label" for="servicio">Servicio</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="monto" class="form-label">Monto Reclamado</label>
+                                    <input type="number"  step = "0.01" class="form-control" id="monto" name="monto" required>
+                                </div>
+                                <div class="col">
+                                    <label for="comprobante" class="form-label">Comprobante</label>
+                                    <select class="form-select" id="comprobante" name="comprobante" required>
+                                        <option value="">Seleccionar...</option>
+                                        <option value="factura">Factura</option>
+                                        <option value="boleta">Boleta</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="numero_comprobante" class="form-label">Número de Comprobante</label>
+                                    <input type="text" class="form-control" id="numero_comprobante" name="numero_comprobante" required>
+                                </div>
+                                <div class="col">
+                                    <label for="fecha_compra" class="form-label">Fecha de Compra</label>
+                                    <input type="date" class="form-control" id="fecha_compra" name="fecha_compra" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="descripcion" class="form-label">Descripción</label>
+                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+                                </div>
+                            </div>
+
+                            
+                            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfl" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var cartIcon = document.querySelector('.cart-icon');
+            var cartPopup = document.getElementById('cartPopup');
+        
+            cartIcon.addEventListener('click', function() {
+                cartPopup.style.display = 'block';
+            });
+        
+            window.addEventListener('click', function(event) {
+                if (event.target !== cartIcon && event.target !== cartPopup && !cartPopup.contains(event.target)) {
+                    cartPopup.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            alert('¡Queja enviada satisfactoriamente!');
+
+            
+            document.getElementById('registroForm').reset();
+        });
+    });
+</script>
+</body>
+</html>
+
