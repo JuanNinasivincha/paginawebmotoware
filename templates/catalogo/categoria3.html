@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Sitio Web</title>
+    <title>D&T NRUTA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/7f6c68362a.js" crossorigin="anonymous"></script>
     <link href="{% static 'styles.css' %}" rel="stylesheet">
@@ -24,10 +24,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Servicios</a>
+                        <a class="nav-link" href="{% url 'servicios' %}">Servicios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'index' %}">Catálogo</a>
@@ -37,11 +37,23 @@
                             <i class="fa-regular fa-user"></i> 
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link cart-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
     
+    <div class="cart-popup" id="cartPopup">
+        <div class="cart-content">
+            <h3>Carrito de Compras</h3>
+            <p>No tienes productos en carrito.</p>
+        </div>
+    </div>
+
     <div class="container mt-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -56,9 +68,11 @@
             <div class="col-md-3 mb-3">
                 <div class="card text-center">
                     <div class="card-body">
-                        <div class="categoria-titulo">MONOSHOCK AMORTIGUADOR CENTRAL</div>
+                        <div class="categoria-titulo">MONOSHOCK AMORTIGUADOR</div>
                         <img src="https://falabella.scene7.com/is/image/FalabellaPE/gsc_124861520_4135438_1?wid=800&hei=800&qlt=70" class="repuesto-img" alt="Aceites">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 170.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -68,6 +82,8 @@
                         <div class="categoria-titulo">RESORTE PEDAL FRENO</div>
                         <img src="https://rimage.ripley.com.pe/home.ripley/Attachment/MKP/2175/PMP00001554593/full_image-1.jpeg" class="repuesto-img" alt="Sistemas de transmisión">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 190.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -77,13 +93,13 @@
                         <div class="categoria-titulo">TELESCOPICA IZQUIERDA</div>
                         <img src="https://jpmotorcycles.pe/wp-content/uploads/amortiguador-sfx-jpmotorcycles-ASFX.jpg" class="repuesto-img" alt="Sistemas de tracción">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 220.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-
 
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -93,6 +109,8 @@
                         <div class="categoria-titulo">RESORTE PARADOR LATERA</div>
                         <img src="https://tecnimotors.com/cdn/shop/products/resorte-parador-lateral-chn0009609-reouestos-prox-rtm126-904_500x_crop_center.jpg?v=1619037994" class="repuesto-img" alt="Aceites">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 170.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -102,15 +120,19 @@
                         <div class="categoria-titulo">RESORTE DE PEDAL DE FRENO</div>
                         <img src="https://tecnimotors.com/cdn/shop/products/gl-resorte-de-pedal-freno-chn0033163-repuestos-766_500x_crop_center.jpg?v=1619031032" class="repuesto-img" alt="Sistemas de transmisión">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 190.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card text-center">
                     <div class="card-body">
-                        <div class="categoria-titulo">AMORTIGUADOR POSTERIOR</div>
+                        <div class="categoria-titulo">AMORTIGUADOR POSTERIOR </div>
                         <img src="https://jpmotorcycles.pe/wp-content/uploads/amortiguador-coopilar-jpmotorcycles-ACOOPILAR.jpg" class="repuesto-img" alt="Sistemas de tracción">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 220.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -122,9 +144,11 @@
             <div class="col-md-3 mb-3">
                 <div class="card text-center">
                     <div class="card-body">
-                        <div class="categoria-titulo">MONOSHOCK AMORTIGUADOR CENTRAL</div>
+                        <div class="categoria-titulo">MONOSHOCK AMORTIGUADOR</div>
                         <img src="https://falabella.scene7.com/is/image/FalabellaPE/gsc_124861520_4135438_1?wid=800&hei=800&qlt=70" class="repuesto-img" alt="Aceites">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 170.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -134,6 +158,8 @@
                         <div class="categoria-titulo">RESORTE PEDAL FRENO</div>
                         <img src="https://rimage.ripley.com.pe/home.ripley/Attachment/MKP/2175/PMP00001554593/full_image-1.jpeg" class="repuesto-img" alt="Sistemas de transmisión">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 190.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -143,56 +169,42 @@
                         <div class="categoria-titulo">TELESCOPICA IZQUIERDA</div>
                         <img src="https://jpmotorcycles.pe/wp-content/uploads/amortiguador-sfx-jpmotorcycles-ASFX.jpg" class="repuesto-img" alt="Sistemas de tracción">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 220.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="categoria-titulo">RESORTE PARADOR LATERA</div>
-                        <img src="https://tecnimotors.com/cdn/shop/products/resorte-parador-lateral-chn0009609-reouestos-prox-rtm126-904_500x_crop_center.jpg?v=1619037994" class="repuesto-img" alt="Aceites">
-                        <p class="card-text">Envíos a nivel nacional</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="categoria-titulo">RESORTE DE PEDAL DE FRENO</div>
-                        <img src="https://tecnimotors.com/cdn/shop/products/gl-resorte-de-pedal-freno-chn0033163-repuestos-766_500x_crop_center.jpg?v=1619031032" class="repuesto-img" alt="Sistemas de transmisión">
-                        <p class="card-text">Envíos a nivel nacional</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="categoria-titulo">AMORTIGUADOR POSTERIOR</div>
-                        <img src="https://jpmotorcycles.pe/wp-content/uploads/amortiguador-coopilar-jpmotorcycles-ACOOPILAR.jpg" class="repuesto-img" alt="Sistemas de tracción">
-                        <p class="card-text">Envíos a nivel nacional</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-   
     <div style="height: 1500px;"></div>
 
 
-    <nav class="navbar contact-navbar">
-        <div class="container d-flex justify-content-between align-items-center">
-            <span class="navbar-text contact-info-text">Contacto: Teléfono: 988458986 | Email: D&TNRUTA123@gmail.com</span>
+    <nav class="navbar contact-navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <span class="navbar-text contact-info-text">Teléfono: 951303091| Email: D&TNRUTA123@gmail.com</span>
             <div>
                 <a href="https://www.tiktok.com/@dytnruta" class="social-icon"><i class="fab fa-tiktok fa-lg"></i></a> 
                 <a href="https://www.facebook.com/profile.php?id=100087597285206&sk=about" class="social-icon"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="{% url 'vistaquejas' %}" class="social-icon"><i class="fa-solid fa-book" style="color: #63E6BE;"></i></a>
             </div>
         </div>
     </nav>
-    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var cartIcon = document.querySelector('.cart-icon');
+            var cartPopup = document.getElementById('cartPopup');
+        
+            cartIcon.addEventListener('click', function() {
+                cartPopup.style.display = 'block';
+            });
+        
+            window.addEventListener('click', function(event) {
+                if (event.target !== cartIcon && event.target !== cartPopup && !cartPopup.contains(event.target)) {
+                    cartPopup.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
     

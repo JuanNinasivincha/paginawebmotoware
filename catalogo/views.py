@@ -22,3 +22,8 @@ def categoria5(request):
 def categoria6(request):
     return render(request, 'catalogo/categoria6.html')
 
+def otros(request):
+    return render(request, 'catalogo/otros.html')
+
+def aboutus(request):
+    return render(request, 'catalogo/nosotros.html')

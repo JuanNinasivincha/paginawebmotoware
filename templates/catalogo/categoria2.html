@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Sitio Web</title>
+    <title>D&T NRUTA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/7f6c68362a.js" crossorigin="anonymous"></script>
     <link href="{% static 'styles.css' %}" rel="stylesheet">
     
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="/">
@@ -24,10 +23,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Servicios</a>
+                        <a class="nav-link" href="{% url 'servicios' %}">Servicios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'index' %}">Catálogo</a>
@@ -37,11 +36,23 @@
                             <i class="fa-regular fa-user"></i> 
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link cart-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
- 
+
+    <div class="cart-popup" id="cartPopup">
+        <div class="cart-content">
+            <h3>Carrito de Compras</h3>
+            <p>No tienes productos en carrito.</p>
+        </div>
+    </div>
+
     <div class="container mt-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -50,8 +61,7 @@
             </ol>
         </nav>
     </div>
-
-   
+ 
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-3 mb-3">
@@ -60,6 +70,8 @@
                         <div class="categoria-titulo">ZAPATA FRENO POSTERIOR LF150GY-PAR</div>
                         <img src="https://socopur.com/wp-content/uploads/2020/11/06430-KRP-980-SFX.jpg" class="repuesto-img" alt="Aceites">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 170.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -67,8 +79,10 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="categoria-titulo">AMORTIGUADOR POSTERIOR KTM RC 200 ENDURANCE</div>
-                        <img src="https://jpmotorcycles.pe/wp-content/uploads/amortiguador-sfx-jpmotorcycles-ASFX.jpg" class="repuesto-img" alt="Sistemas de transmisión">
+                        <img src="https://socopur.com/wp-content/uploads/2020/11/06420-362-000-SFX.jpg" class="repuesto-img" alt="Sistemas de transmisión">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 190.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -78,6 +92,8 @@
                         <div class="categoria-titulo">MAZA POSTERIOR CGL COMPLETA C/EJE P/VARILLA </div>
                         <img src="https://www.cvmotos.cl/wp-content/uploads/2018/12/maza-tras-cg-1.jpg" class="repuesto-img" alt="Sistemas de tracción">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 220.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -92,6 +108,8 @@
                         <div class="categoria-titulo">ZAPATA FRENO GL125 SFX</div>
                         <img src="https://socopur.com/wp-content/uploads/2020/11/06420-362-000-SFX.jpg" class="repuesto-img" alt="Aceites">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 170.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -101,51 +119,25 @@
                         <div class="categoria-titulo">ZAPATA FRENO POS. CRYPTON SFX</div>
                         <img src="https://socopur.com/wp-content/uploads/2020/11/296-25330-00-SFX-300x300.jpg" class="repuesto-img" alt="Sistemas de transmisión">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 190.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card text-center">
                     <div class="card-body">
-                        <div class="categoria-titulo">PASTILLA FRENO WAVE</div>
+                        <div class="categoria-titulo">PASTILLA FRENO WAVE </div>
                         <img src="https://socopur.com/wp-content/uploads/2020/11/06455-KRF-B70-C-300x300.jpg" class="repuesto-img" alt="Sistemas de tracción">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 220.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="categoria-titulo">ZAPATA FRENO GL125 SFX</div>
-                        <img src="https://socopur.com/wp-content/uploads/2020/11/06420-362-000-SFX.jpg" class="repuesto-img" alt="Aceites">
-                        <p class="card-text">Envíos a nivel nacional</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="categoria-titulo">ZAPATA FRENO POS. CRYPTON SFX</div>
-                        <img src="https://socopur.com/wp-content/uploads/2020/11/296-25330-00-SFX-300x300.jpg" class="repuesto-img" alt="Sistemas de transmisión">
-                        <p class="card-text">Envíos a nivel nacional</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="categoria-titulo">PASTILLA FRENO WAVE</div>
-                        <img src="https://socopur.com/wp-content/uploads/2020/11/06455-KRF-B70-C-300x300.jpg" class="repuesto-img" alt="Sistemas de tracción">
-                        <p class="card-text">Envíos a nivel nacional</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-3 mb-3">
@@ -154,6 +146,8 @@
                         <div class="categoria-titulo">ZAPATA FRENO POSTERIOR LF150GY-PAR</div>
                         <img src="https://socopur.com/wp-content/uploads/2020/11/06430-KRP-980-SFX.jpg" class="repuesto-img" alt="Aceites">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 170.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -161,8 +155,10 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="categoria-titulo">AMORTIGUADOR POSTERIOR KTM RC 200 ENDURANCE</div>
-                        <img src="https://jpmotorcycles.pe/wp-content/uploads/amortiguador-sfx-jpmotorcycles-ASFX.jpg" class="repuesto-img" alt="Sistemas de transmisión">
+                        <img src="https://socopur.com/wp-content/uploads/2020/11/06420-362-000-SFX.jpg" class="repuesto-img" alt="Sistemas de transmisión">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 190.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -172,23 +168,51 @@
                         <div class="categoria-titulo">MAZA POSTERIOR CGL COMPLETA C/EJE P/VARILLA </div>
                         <img src="https://www.cvmotos.cl/wp-content/uploads/2018/12/maza-tras-cg-1.jpg" class="repuesto-img" alt="Sistemas de tracción">
                         <p class="card-text">Envíos a nivel nacional</p>
+                        <p class="card-text">S/ 220.00</p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-   
+
+
+    
+    
     <div style="height: 1500px;"></div>
 
 
-    <nav class="navbar contact-navbar">
-        <div class="container d-flex justify-content-between align-items-center">
-            <span class="navbar-text contact-info-text">Contacto: Teléfono: 988458986 | Email: D&TNRUTA123@gmail.com</span>
+    <nav class="navbar contact-navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <span class="navbar-text contact-info-text">Teléfono: 951303091| Email: D&TNRUTA123@gmail.com</span>
             <div>
                 <a href="https://www.tiktok.com/@dytnruta" class="social-icon"><i class="fab fa-tiktok fa-lg"></i></a> 
                 <a href="https://www.facebook.com/profile.php?id=100087597285206&sk=about" class="social-icon"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="{% url 'vistaquejas' %}" class="social-icon"><i class="fa-solid fa-book" style="color: #63E6BE;"></i></a>
             </div>
         </div>
     </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var cartIcon = document.querySelector('.cart-icon');
+            var cartPopup = document.getElementById('cartPopup');
+        
+            cartIcon.addEventListener('click', function() {
+                cartPopup.style.display = 'block';
+            });
+        
+            window.addEventListener('click', function(event) {
+                if (event.target !== cartIcon && event.target !== cartPopup && !cartPopup.contains(event.target)) {
+                    cartPopup.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+
+   
+
     
+
+
     
