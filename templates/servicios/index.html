@@ -37,10 +37,22 @@
                             <i class="fa-regular fa-user"></i> 
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link cart-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
                 </ul>
-            </div>
+            </div> 
         </div>
     </nav>
+
+    <div class="cart-popup" id="cartPopup">
+        <div class="cart-content">
+            <h3>Carrito de Compras</h3>
+            <p>No tienes productos en carrito.</p>
+        </div>
+    </div>
     
     
     <div class="container my-5">
@@ -111,5 +123,22 @@
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qvphk4KpGHbqW8BiTQK1vxUp8kjvYjFAT0MXJX7HlEk7k3dC1L93pXlbMn0y5tw4" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var cartIcon = document.querySelector('.cart-icon');
+            var cartPopup = document.getElementById('cartPopup');
+        
+            cartIcon.addEventListener('click', function() {
+                cartPopup.style.display = 'block';
+            });
+        
+            window.addEventListener('click', function(event) {
+                if (event.target !== cartIcon && event.target !== cartPopup && !cartPopup.contains(event.target)) {
+                    cartPopup.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
