@@ -1,0 +1,113 @@
+        .repuesto-img {
+            max-height: 150px;
+            width: auto; 
+            object-fit: cover;
+            border-radius: 50%; 
+        }
+
+        .contact-navbar {
+            background-color: #333; 
+            color: #fff; 
+            padding: 10px 0; 
+            position: fixed; 
+            bottom: 0; 
+            width: 100%; 
+            z-index: 1000;
+        }
+
+        .contact-info {
+            background-color: #FF5722; 
+            color: #ffffff; 
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icons {
+            font-size: 24px;
+            margin: 0 5px;
+            color: #ffffff;
+        }
+
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .carousel-img {
+            max-height: 200px; 
+            width: 100%; 
+            max-width: 600px; 
+            margin: auto; 
+        }
+
+        .border-green {
+            border: 2px solid green;
+            padding: 15px;
+        }
+
+        .contact-info-text {
+            color: #fff;
+        }
+
+        .categoria-titulo {
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .modal-dialog {
+            margin: 10% auto;
+        }
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        
+        .cart-popup {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            width: 300px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .cart-popup h3 {
+            margin-top: 0;
+        }
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        
+        .cart-popup p {
+            margin-bottom: 0;
+        }
+        
+        .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-nav .nav-link .fa-regular,
+        .navbar-nav .nav-link .fa-solid {
+            font-size: 1.2rem; 
+            margin-right: 5px; 
+            line-height: 1; 
+        }
+        
+        .navbar-nav .nav-link.cart-icon {
+            display: inline-flex; 
+            align-items: center; 
+            margin-top: -3px; 
+        }
+        
+        
+        
