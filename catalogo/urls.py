@@ -11,4 +11,5 @@ urlpatterns = [
     path('Iluminación/', views.categoria6, name='categoria6'),
     path('Otros/', views.otros, name = 'otros'),
     path('Nosotros', views.aboutus, name = 'nosotros'),
+    path('busqueda', views.busquedaavanzada, name = 'busquedav')
 ]

@@ -27,3 +27,6 @@ def otros(request):
 
 def aboutus(request):
     return render(request, 'catalogo/nosotros.html')
+
+def busquedaavanzada(request):
+    return render(request, 'catalogo/search.html')
