@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-x4!bk+b#7iyc_h(r7#_7gn#w)r17x-sak=2ci=+*hn^=p5f6vo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['*']
+CORS_ALLOWED_ORIGINS = True
 
 
 # Application definition
@@ -51,6 +53,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",  # Ejemplo: reemplaza con la URL de tu frontend
+    "http://localhost:8000",  # Otro ejemplo: reemplaza con la URL de tu frontend
+   
 ]
 
 ROOT_URLCONF = 'paginawebmotoware.urls'
@@ -126,5 +135,7 @@ STATICFILES_DIRS = [BASE_DIR/ "static"]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+API_URL = "https://tesis-motoware-back.onrender.com/"
 
 
