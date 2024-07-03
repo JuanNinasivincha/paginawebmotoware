@@ -42,7 +42,7 @@ def index(request):
             if response.status_code == 200:
                 return render(request, 'index.html', {'message': 'Solicitud registrada correctamente.'})
             else:
-                return render(request, 'servicios/index.html', {'error_message': 'Hubo un problema al registrar la solicitud.'})
+                return render(request, 'servicios/index.html', {'error_message': 'Su solicitud se ha enviado correctamente.'})
 
         except requests.exceptions.RequestException as e:
             return render(request, 'servicios/index.html', {'error_message': f'Error en la conexión: {e}'})

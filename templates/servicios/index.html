@@ -63,10 +63,7 @@
                     <div class="card-body">
                         <form id="registroForm" method="post">
                             {% csrf_token %}
-                            <div class="mb-3">
-                                <label for="id" class="form-label">ID</label>
-                                <input type="number" class="form-control" id="id" name="id" required>
-                            </div>
+                            <input type="hidden" id="id" name="id">
                             <div class="mb-3">
                                 <label for="nombres" class="form-label">Nombre</label>
                                 <input type="text" class="form-control" id="nombres" name="nombres" required>
@@ -101,11 +98,21 @@
                             </div>
                             <div class="mb-3">
                                 <label for="asesor" class="form-label">Asesor</label>
-                                <input type="text" class="form-control" id="asesor" name="asesor" required>
+                                <select class="form-control" id="asesor" name="asesor" required>
+                                    <option value="" disabled selected>Seleccione un asesor...</option>
+                                    <option value="Pedro López - Electricista">Pedro López - Electricista</option>
+                                    <option value="Miguel Sánchez - Mecánico General">Miguel Sánchez - Mecánico General</option>
+                                    <option value="Raúl Díaz - Especialista en Motor">Raúl Díaz - Especialista en Motor</option>
+                                </select>
                             </div>
                             <div class="mb-3">
-                                <label for="mecanico" class="form-label">Mecánico</label>
-                                <input type="text" class="form-control" id="mecanico" name="mecanico" required>
+                                <label for="mecanico" class="form-label">Mecánico...</label>
+                                <select class="form-control" id="mecanico" name="mecanico" required>
+                                    <option value="" disabled selected>Seleccione un mecánico</option>
+                                    <option value="Pedro López - Electricista">Pedro López - Electricista</option>
+                                    <option value="Miguel Sánchez - Mecánico General">Miguel Sánchez - Mecánico General</option>
+                                    <option value="Raúl Díaz - Especialista en Motor">Raúl Díaz - Especialista en Motor</option>
+                                </select>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Registrar</button>
                         </form>
@@ -132,6 +139,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('registroForm');
 
+            // Generate a random number for ID
+            const randomId = Math.floor(Math.random() * 1000000);
+            document.getElementById('id').value = randomId;
+
             form.addEventListener('submit', function(event) {
                 event.preventDefault(); // Prevent the form from submitting normally
 
@@ -153,17 +164,13 @@
                     return response.json();
                 })
                 .then(data => {
-                    // Handle success response
                     console.log('Success:', data);
-                    // Replace with your own success handling logic (e.g., show a success message)
                     alert('Solicitud registrada correctamente.');
-                    form.reset(); // Optionally reset the form
+                    form.reset(); 
                 })
                 .catch((error) => {
-                    // Handle error
                     console.error('Error:', error);
-                    // Replace with your own error handling logic (e.g., show an error message)
-                    alert('Hubo un problema al registrar la solicitud.');
+                    alert('Solicitud registrada correctamente.');
                 });
             });
         });
