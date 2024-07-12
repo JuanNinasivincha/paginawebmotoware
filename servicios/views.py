@@ -37,7 +37,7 @@ def index(request):
 
         try:
             response = requests.post(url_api_fastapi, json=data)
-            response.raise_for_status()  # Raise an exception for HTTP errors
+            response.raise_for_status()  
 
             if response.status_code == 200:
                 return render(request, 'index.html', {'message': 'Solicitud registrada correctamente.'})
@@ -47,6 +47,6 @@ def index(request):
         except requests.exceptions.RequestException as e:
             return render(request, 'servicios/index.html', {'error_message': f'Error en la conexión: {e}'})
 
-    # Render the form initially
+   
     return render(request, 'servicios/index.html')
 
